@@ -1,0 +1,11 @@
+export 'package:flutter_elijah/sections/approaches.dart';
+export 'package:flutter_elijah/sections/bottom.dart';
+export 'package:flutter_elijah/sections/contacts.dart';
+export 'package:flutter_elijah/sections/education.dart';
+export 'package:flutter_elijah/sections/experience.dart';
+export 'package:flutter_elijah/sections/head.dart';
+export 'package:flutter_elijah/sections/header.dart';
+export 'package:flutter_elijah/sections/hobbies.dart';
+export 'package:flutter_elijah/sections/profile.dart';
+export 'package:flutter_elijah/sections/soft_skills.dart';
+export 'package:flutter_elijah/sections/technologies.dart';
