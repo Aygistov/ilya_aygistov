@@ -318,12 +318,12 @@ String personJson = """{
     }],
     "contacts": [
     {
-      "link": "https://www.facebook.com/aygistov.ilya",
+      "link": "https://www.facebook.com/",
       "iconData": "0xf09a",
       "color": "0xFF3b5998"
     },
     {
-      "link": "https://telegram.me/Hatnenian",
+      "link": "https://telegram.me/",
       "iconData": "0xf2c6",
       "color": "0xFF0088cc"
     }]    
