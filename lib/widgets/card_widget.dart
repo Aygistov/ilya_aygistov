@@ -14,8 +14,7 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding:
-          const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10, top: 10),
+      padding: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10, top: 10),
       margin: const EdgeInsets.only(right: 20.0, bottom: 20),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -30,7 +29,7 @@ class CardWidget extends StatelessWidget {
         ],
       ),
       child: SizedBox(
-        height: 120,
+        height: 125,
         width: 100,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -41,10 +40,7 @@ class CardWidget extends StatelessWidget {
             ),
             Text(
               person.stringFromFileName(approache),
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineMedium!
-                  .apply(color: Colors.black),
+              style: Theme.of(context).textTheme.headlineMedium!.apply(color: Colors.black),
             ),
           ],
         ),
@@ -68,8 +64,7 @@ class IconCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: cardHeight,
-      padding:
-          const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 5, top: 10),
+      padding: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 5, top: 10),
       margin: const EdgeInsets.only(right: 20.0, bottom: 20),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -101,10 +96,7 @@ class IconCardWidget extends StatelessWidget {
             ),
             Text(
               appIcon.name,
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineMedium!
-                  .apply(color: Colors.black),
+              style: Theme.of(context).textTheme.headlineMedium!.apply(color: Colors.black),
               textAlign: TextAlign.center,
             ),
           ],

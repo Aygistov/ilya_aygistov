@@ -24,7 +24,6 @@ class ProfileWidget extends StatelessWidget {
               )),
           const SizedBox(height: 30),
           ProfileRowWidget('Name', person.name),
-          ProfileRowWidget('Date of Birth', person.dateOfBirth),
           ProfileRowWidget('Position', person.position),
           ProfileRowWidget('City', person.city),
         ],
@@ -49,23 +48,27 @@ class ProfileRowWidget extends StatelessWidget {
     return SizedBox(
       height: 60,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Text(
+            rigthText,
+            style: Theme.of(context).textTheme.displaySmall,
+          ),
+          /*
           Expanded(
             child: Container(
               padding: const EdgeInsets.only(right: 30.0),
               child: Text(
                 leftText,
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineMedium!
-                    .apply(color: Colors.white),
+                style: Theme.of(context).textTheme.headlineMedium!.apply(color: Colors.white),
                 textAlign: TextAlign.right,
               ),
             ),
           ),
           Expanded(
             child: Container(
+              alignment: Alignment.centerLeft,
               padding: const EdgeInsets.only(left: 30.0),
               height: 30,
               decoration: const BoxDecoration(
@@ -79,6 +82,7 @@ class ProfileRowWidget extends StatelessWidget {
               ),
             ),
           ),
+          */
         ],
       ),
     );

@@ -16,11 +16,8 @@ class SoftSkillsWidget extends StatelessWidget {
       //height: 220,
       color: appColors['backGround1'],
       child: Wrap(
-          children: person.softSkills
-              .asMap()
-              .entries
-              .map((entry) => IconCardWidget(entry.value, entry.key, 180))
-              .toList()),
+          children:
+              person.softSkills.asMap().entries.map((entry) => IconCardWidget(entry.value, entry.key, 185)).toList()),
     );
   }
 }

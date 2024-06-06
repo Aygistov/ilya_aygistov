@@ -37,20 +37,16 @@ class Person {
 
   factory Person.fromJson(dynamic json) {
     var jobObjsJson = json['jobs'] as List;
-    List<Job> _jobs =
-        jobObjsJson.map((jobJson) => Job.fromJson(jobJson, false)).toList();
+    List<Job> _jobs = jobObjsJson.map((jobJson) => Job.fromJson(jobJson, false)).toList();
 
     var eduObjsJson = json['educations'] as List;
-    List<Job> _educations =
-        eduObjsJson.map((eduJson) => Job.fromJson(eduJson, true)).toList();
+    List<Job> _educations = eduObjsJson.map((eduJson) => Job.fromJson(eduJson, true)).toList();
 
     var softObjsJson = json['softSkills'] as List;
-    List<AppIcon> _softSkills =
-        softObjsJson.map((softSkill) => AppIcon.fromJson(softSkill)).toList();
+    List<AppIcon> _softSkills = softObjsJson.map((softSkill) => AppIcon.fromJson(softSkill)).toList();
 
     var hobObjsJson = json['hobbies'] as List;
-    List<AppIcon> _hobbies =
-        hobObjsJson.map((hobbi) => AppIcon.fromJson(hobbi)).toList();
+    List<AppIcon> _hobbies = hobObjsJson.map((hobbi) => AppIcon.fromJson(hobbi)).toList();
 
 /*
     var conObjsJson = json['contacts'] as List;
@@ -64,9 +60,7 @@ class Person {
         link: 'https://www.linkedin.com/in/ilya-aygistov/'));
 
     _contacts.add(AppLink(
-        color: const Color(0xFF0088cc),
-        iconData: FontAwesome5.telegram,
-        link: 'https://telegram.me/Hatnenian'));
+        color: const Color(0xFF0088cc), iconData: FontAwesome5.telegram, link: 'https://telegram.me/Hatnenian'));
 
     return Person(
       name: json['name'],
@@ -94,35 +88,25 @@ class Job {
   final bool isEducation;
 
   String jobDuration() {
-    final monthsCount =
-        (dateTo.year - dateFrom.year) * 12 + dateTo.month - dateFrom.month;
+    final monthsCount = (dateTo.year - dateFrom.year) * 12 + dateTo.month - dateFrom.month;
     final years = monthsCount ~/ 12;
     final months = monthsCount % 12;
 
-    return (years > 0
-            ? years.toString() + ' year' + (years > 1 ? 's ' : ' ')
-            : '') +
-        (months > 0
-            ? months.toString() + ' month' + (months > 1 ? 's' : '')
-            : '');
+    return (years > 0 ? years.toString() + ' year' + (years > 1 ? 's ' : ' ') : '') +
+        (months > 0 ? months.toString() + ' month' + (months > 1 ? 's' : '') : '');
   }
 
   String jobPeriod() {
-    return ((isEducation ? '' : dateFrom.month.toString() + '.') +
-            dateFrom.year.toString()) +
+    return ((isEducation ? '' : dateFrom.month.toString() + '.') + dateFrom.year.toString()) +
         (isEducation && dateFrom.year == dateTo.year
             ? ''
-            : ' - ' +
-                ((isEducation ? '' : dateTo.month.toString() + '.') +
-                    dateTo.year.toString()));
+            : ' - ' + ((isEducation ? '' : dateTo.month.toString() + '.') + dateTo.year.toString()));
   }
 
   Job.fromJson(Map<String, dynamic> json, bool _isEducation)
       : companyName = json['companyName'],
         dateFrom = DateTime.parse(json['dateFrom']),
-        dateTo = json['dateTo'] != ""
-            ? DateTime.parse(json['dateTo'])
-            : DateTime.now(),
+        dateTo = json['dateTo'] != "" ? DateTime.parse(json['dateTo']) : DateTime.now(),
         positions = [...json["positions"]],
         keywords = [...json["keywords"]],
         responsibilitys = [...json["responsibilitys"]],
@@ -165,18 +149,28 @@ class AppLink {
   });
 }
 
+final dateNow = DateTime.now().toString();
+
 String personJson = """{
   "name": "Ilya Aygistov",
-  "position": "Flutter Developer",
+  "position": "Flutter & Serverpod Developer",
   "dateOfBirth": "May 29, 1986",
   "city": "Kyiv",
   "jobs": [
     {
-      "companyName": "Home",
-      "dateFrom": "2022-01-01",
-      "dateTo": "2023-01-01",
+      "companyName": "Avtologistika",
+      "dateFrom": "2023-04-01",
+      "dateTo": "$dateNow",
       "positions": ["Flutter Developer"],
-      "keywords": ["Flutter","Dart","Firebase","BLoC"],
+      "keywords": ["Flutter","RxDart","Reactive Forms","Flutter Map","Camera","Sqflite","Open API","Auto Route","SVG","Rest API","gRPC"],
+      "responsibilitys": ["Android and iOS app development", "Mentoring and code reviewing","Writing integration tests", "Task estimation"]
+    },
+    {
+      "companyName": "Self-Employed",
+      "dateFrom": "2022-01-01",
+      "dateTo": "2023-04-01",
+      "positions": ["Flutter Developer"],
+      "keywords": ["Flutter","Dart","Firebase","BLoC","Provider","Hive"],
       "responsibilitys": ["Web and mobile app development"] 
     },
     {
@@ -184,49 +178,8 @@ String personJson = """{
       "dateFrom": "2013-02-01",
       "dateTo": "2021-12-01",
       "positions": ["Developer","Senior Developer","Lead Developer"],
-      "keywords": ["Advertising","TV","Sales","CRM"],
+      "keywords": ["Advertising","TV","Sales","ERP","CRM"],
       "responsibilitys": ["1C 8.3 development","Users support"] 
-    },
-    {
-      "companyName": "East European University",
-      "dateFrom": "2012-10-01",
-      "dateTo": "2013-02-01",
-      "positions": ["Software Engineer"],
-      "keywords": ["Accounting","Docflow","Education"],
-      "responsibilitys": [
-        "Maintenance and implementation of configurations 1C 8.3",
-      "Database administration","Users support"] 
-    },
-    {
-      "companyName": "Quartz",
-      "dateFrom": "2012-01-01",
-      "dateTo": "2012-04-01",
-      "positions": ["Software Engineer"],
-      "keywords": ["IT","1C Franchisee","Development"],
-      "responsibilitys": [
-        "Development of configurations 1C 8.2 based on 1C Small Business",
-        "Database administration",
-        "Users support"] 
-    },
-    {
-      "companyName": "Formula Smaku",
-      "dateFrom": "2010-04-01",
-      "dateTo": "2011-04-01",
-      "positions": ["Software Engineer"],
-      "keywords": ["Food industry","Accounting"],
-      "responsibilitys": [
-        "Development of configurations 1C 8.2 based on 1C Accounting for Ukraine",
-        "Database administration",
-        "Users support"] 
-    },
-    {
-      "companyName": "National Aviation University",
-      "dateFrom": "2009-10-01",
-      "dateTo": "2009-12-01",
-      "positions": ["Research Assistant"],
-      "keywords": ["Numerical methods","Mathematical physics","MathLab"],
-      "responsibilitys": [
-        "Algorithms development for the numerical solution of mathematical physics equations"] 
     }
   ],
   "educations": [
@@ -249,7 +202,7 @@ String personJson = """{
   ],
   "approaches": ["waterfall.png", "agile.png", "scrum.png",
      "kanban.png", "lean.png", "TDD.png", "SOLID.png"],
-  "technologies": ["dart.png", "flutter.png", "VS_Code.png", "GitHub.png", "firebase.png", "bloc.png", "hive.png", "beamer.png"],
+  "technologies": ["dart.png", "flutter.png", "serverpod.png", "firebase.png", "VS_Code.png", "GitHub.png", "GitLab.png", "docker.png", "RxDart.png", "sqflite.png" ,"isar.png", "hive.png", "AutoRoute.png", "OpenApi.png", "swagger.png","figma.png"],
   "softSkills": [
     {
       "name": "Bringing things to an end",

@@ -33,7 +33,6 @@ class MainWidget extends StatelessWidget {
     return Scaffold(
       appBar: mobileMode
           ? AppBar(
-              title: const Text('Ilya Aygistov (Flutter Developer)'),
               backgroundColor: appColors['backGround4'],
             )
           : null,
@@ -62,9 +61,7 @@ class HomeWidget extends StatelessWidget {
       child: NotificationListener<ScrollNotification>(
         onNotification: (scrollNotification) {
           if (scrollNotification is ScrollStartNotification) {
-            context
-                .read<NavigationCubit>()
-                .scrolling(context.read<NavigationCubit>().state);
+            context.read<NavigationCubit>().scrolling(context.read<NavigationCubit>().state);
           }
           return true;
         },
@@ -81,7 +78,7 @@ class HomeWidget extends StatelessWidget {
               const EducationWidget(),
               HeaderWidget('Approaches', key: dataKeys['Hard Skills']),
               const ApproachesWidget(),
-              const HeaderWidget('Technologies and Tools'),
+              const HeaderWidget('Technologies'),
               const TechnologiesWidget(),
               HeaderWidget('Soft Skills', key: dataKeys['Soft Skills']),
               const SoftSkillsWidget(),

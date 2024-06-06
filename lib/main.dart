@@ -4,6 +4,7 @@ import 'package:flutter_elijah/theme.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() {
+  // ignore: prefer_const_constructors
   setUrlStrategy(PathUrlStrategy());
   runApp(const MyApp());
 }
