@@ -37,29 +37,29 @@ class Person {
 
   factory Person.fromJson(dynamic json) {
     var jobObjsJson = json['jobs'] as List;
-    List<Job> _jobs = jobObjsJson.map((jobJson) => Job.fromJson(jobJson, false)).toList();
+    List<Job> jobs = jobObjsJson.map((jobJson) => Job.fromJson(jobJson, false)).toList();
 
     var eduObjsJson = json['educations'] as List;
-    List<Job> _educations = eduObjsJson.map((eduJson) => Job.fromJson(eduJson, true)).toList();
+    List<Job> educations = eduObjsJson.map((eduJson) => Job.fromJson(eduJson, true)).toList();
 
     var softObjsJson = json['softSkills'] as List;
-    List<AppIcon> _softSkills = softObjsJson.map((softSkill) => AppIcon.fromJson(softSkill)).toList();
+    List<AppIcon> softSkills = softObjsJson.map((softSkill) => AppIcon.fromJson(softSkill)).toList();
 
     var hobObjsJson = json['hobbies'] as List;
-    List<AppIcon> _hobbies = hobObjsJson.map((hobbi) => AppIcon.fromJson(hobbi)).toList();
+    List<AppIcon> hobbies = hobObjsJson.map((hobbi) => AppIcon.fromJson(hobbi)).toList();
 
 /*
     var conObjsJson = json['contacts'] as List;
     List<AppLink> _contacts =
         conObjsJson.map((contact) => AppLink.fromJson(contact)).toList();
 */
-    List<AppLink> _contacts = [];
-    _contacts.add(AppLink(
+    List<AppLink> contacts = [];
+    contacts.add(AppLink(
         color: const Color(0xFF0e76a8),
         iconData: FontAwesome5.linkedin,
         link: 'https://www.linkedin.com/in/ilya-aygistov/'));
 
-    _contacts.add(AppLink(
+    contacts.add(AppLink(
         color: const Color(0xFF0088cc), iconData: FontAwesome5.telegram, link: 'https://telegram.me/Hatnenian'));
 
     return Person(
@@ -67,13 +67,13 @@ class Person {
       position: json['position'],
       dateOfBirth: json['dateOfBirth'],
       city: json['city'],
-      jobs: _jobs,
-      educations: _educations,
+      jobs: jobs,
+      educations: educations,
       approaches: [...json["approaches"]],
       technologies: [...json["technologies"]],
-      softSkills: _softSkills,
-      hobbies: _hobbies,
-      contacts: _contacts,
+      softSkills: softSkills,
+      hobbies: hobbies,
+      contacts: contacts,
     );
   }
 }
@@ -92,25 +92,25 @@ class Job {
     final years = monthsCount ~/ 12;
     final months = monthsCount % 12;
 
-    return (years > 0 ? years.toString() + ' year' + (years > 1 ? 's ' : ' ') : '') +
-        (months > 0 ? months.toString() + ' month' + (months > 1 ? 's' : '') : '');
+    return (years > 0 ? '$years year${years > 1 ? 's ' : ' '}' : '') +
+        (months > 0 ? '$months month${months > 1 ? 's' : ''}' : '');
   }
 
   String jobPeriod() {
-    return ((isEducation ? '' : dateFrom.month.toString() + '.') + dateFrom.year.toString()) +
+    return ((isEducation ? '' : '${dateFrom.month}.') + dateFrom.year.toString()) +
         (isEducation && dateFrom.year == dateTo.year
             ? ''
-            : ' - ' + ((isEducation ? '' : dateTo.month.toString() + '.') + dateTo.year.toString()));
+            : ' - ${isEducation ? '' : '${dateTo.month}.'}${dateTo.year}');
   }
 
-  Job.fromJson(Map<String, dynamic> json, bool _isEducation)
+  Job.fromJson(Map<String, dynamic> json, bool isEducationP)
       : companyName = json['companyName'],
         dateFrom = DateTime.parse(json['dateFrom']),
         dateTo = json['dateTo'] != "" ? DateTime.parse(json['dateTo']) : DateTime.now(),
         positions = [...json["positions"]],
         keywords = [...json["keywords"]],
         responsibilitys = [...json["responsibilitys"]],
-        isEducation = _isEducation;
+        isEducation = isEducationP;
 
   Job({
     required this.companyName,

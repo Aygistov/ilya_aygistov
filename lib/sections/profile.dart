@@ -4,8 +4,8 @@ import 'package:flutter_elijah/person_data.dart';
 
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +38,8 @@ class ProfileRowWidget extends StatelessWidget {
   const ProfileRowWidget(
     this.leftText,
     this.rigthText, {
-    Key? key,
-  }) : super(
-          key: key,
-        );
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

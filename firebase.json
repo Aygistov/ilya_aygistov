@@ -12,5 +12,24 @@
         "destination": "/index.html"
       }
     ]
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "ilya-aygistov",
+          "appId": "1:901618325658:android:5bdc656db4bb30ab0fa723",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "ilya-aygistov",
+          "configurations": {
+            "web": "1:901618325658:web:9505cd42ac6b5c4b0fa723"
+          }
+        }
+      }
+    }
   }
 }

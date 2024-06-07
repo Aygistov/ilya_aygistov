@@ -5,8 +5,8 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 class ContactsWidget extends StatelessWidget {
   const ContactsWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +14,7 @@ class ContactsWidget extends StatelessWidget {
       color: appColors['backGround1'],
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children:
-            person.contacts.map((contact) => LinkIconButton(contact)).toList(),
+        children: person.contacts.map((contact) => LinkIconButton(contact)).toList(),
       ),
     );
   }
@@ -26,8 +25,8 @@ class LinkIconButton extends StatelessWidget {
 
   const LinkIconButton(
     this.applink, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

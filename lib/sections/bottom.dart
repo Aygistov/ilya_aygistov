@@ -3,8 +3,8 @@ import 'package:flutter_elijah/colors.dart';
 
 class BottomWidget extends StatelessWidget {
   const BottomWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

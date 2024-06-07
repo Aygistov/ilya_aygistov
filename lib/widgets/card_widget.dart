@@ -8,8 +8,8 @@ class CardWidget extends StatelessWidget {
   const CardWidget(
     this.approache,
     this.folder, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class CardWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/images/' + folder + '/' + approache.toLowerCase(),
+              'assets/images/$folder/${approache.toLowerCase()}',
               //width: 75,
             ),
             Text(
@@ -57,8 +57,8 @@ class IconCardWidget extends StatelessWidget {
     this.appIcon,
     this.index,
     this.cardHeight, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

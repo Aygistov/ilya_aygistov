@@ -5,8 +5,8 @@ import 'package:flutter_elijah/widgets/card_widget.dart';
 
 class SoftSkillsWidget extends StatelessWidget {
   const SoftSkillsWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -5,8 +5,8 @@ class HeaderWidget extends StatelessWidget {
   final String headerText;
   const HeaderWidget(
     this.headerText, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

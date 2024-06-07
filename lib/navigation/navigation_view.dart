@@ -5,13 +5,12 @@ import 'package:flutter_elijah/navigation/navigation.dart';
 
 class NavigateWidget extends StatelessWidget {
   const NavigateWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final selectedIndex =
-        context.select((NavigationCubit cubit) => cubit.state.navigationIndex);
+    final selectedIndex = context.select((NavigationCubit cubit) => cubit.state.navigationIndex);
     final mobileMode = MediaQuery.of(context).size.width < 600;
 
     return Visibility(
@@ -49,8 +48,8 @@ class NavigateIconButton extends StatelessWidget {
     this.text,
     this.iconData,
     this.hiding, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -79,8 +78,8 @@ class NavigateIconButton extends StatelessWidget {
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -91,19 +90,15 @@ class DrawerWidget extends StatelessWidget {
           padding: EdgeInsets.only(right: 30, top: 30, bottom: 30),
           child: FlutterLogo(),
         ),
-        ...navigationIcons
-            .asMap()
-            .entries
-            .map((entry) => ListTile(
-                onTap: () {
-                  context.read<NavigationCubit>().changeIndex(entry.key);
-                  jumpTo(entry.value['label']);
-                },
-                leading: Icon(
-                  entry.value['icon'] as IconData,
-                ),
-                title: Text(entry.value['label'] as String)))
-            .toList(),
+        ...navigationIcons.asMap().entries.map((entry) => ListTile(
+            onTap: () {
+              context.read<NavigationCubit>().changeIndex(entry.key);
+              jumpTo(entry.value['label']);
+            },
+            leading: Icon(
+              entry.value['icon'] as IconData,
+            ),
+            title: Text(entry.value['label'] as String))),
       ]),
     );
   }

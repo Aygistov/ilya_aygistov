@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "901618325658",
+    "project_id": "ilya-aygistov",
+    "storage_bucket": "ilya-aygistov.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901618325658:android:5bdc656db4bb30ab0fa723",
+        "android_client_info": {
+          "package_name": "com.example.flutter_elijah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901618325658-6shtp4r1gbvr8d9711359jthmje5p7bv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3q8kSxwC0lXtlSkVhGLW2Rm4Tp7QCtGM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901618325658-6shtp4r1gbvr8d9711359jthmje5p7bv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

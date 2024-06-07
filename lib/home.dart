@@ -7,7 +7,7 @@ import 'navigation/cubit/navigation_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -22,9 +22,9 @@ class MyHomePage extends StatelessWidget {
 
 class MainWidget extends StatelessWidget {
   const MainWidget({
-    Key? key,
+    super.key,
     required,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -52,8 +52,8 @@ class MainWidget extends StatelessWidget {
 
 class HomeWidget extends StatelessWidget {
   const HomeWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

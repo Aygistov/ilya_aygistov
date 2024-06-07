@@ -5,8 +5,8 @@ import 'package:flutter_elijah/widgets/card_widget.dart';
 
 class ApproachesWidget extends StatelessWidget {
   const ApproachesWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +14,7 @@ class ApproachesWidget extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.only(left: 10.0, top: 20),
       color: appColors['backGround1'],
-      child: Wrap(
-          children: person.approaches
-              .map((approache) => CardWidget(approache, 'approaches'))
-              .toList()),
+      child: Wrap(children: person.approaches.map((approache) => CardWidget(approache, 'approaches')).toList()),
     );
   }
 }

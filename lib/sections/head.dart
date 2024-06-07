@@ -4,8 +4,8 @@ import 'package:flutter_elijah/person_data.dart';
 
 class HeadWidget extends StatelessWidget {
   const HeadWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

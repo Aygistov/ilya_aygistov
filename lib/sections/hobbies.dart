@@ -5,8 +5,8 @@ import 'package:flutter_elijah/widgets/card_widget.dart';
 
 class HobbiesWidget extends StatelessWidget {
   const HobbiesWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +15,8 @@ class HobbiesWidget extends StatelessWidget {
       padding: const EdgeInsets.only(left: 10.0, top: 20),
       color: appColors['backGround1'],
       child: Wrap(
-          children: person.hobbies
-              .asMap()
-              .entries
-              .map((entry) => IconCardWidget(entry.value, entry.key + 2, null))
-              .toList()),
+          children:
+              person.hobbies.asMap().entries.map((entry) => IconCardWidget(entry.value, entry.key + 2, null)).toList()),
     );
   }
 }
